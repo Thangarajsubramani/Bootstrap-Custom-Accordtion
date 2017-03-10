@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wih4h=device-wih4h, initial-scale=1">
+    <title>Bootstrap 3.1.0 - Modal Demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-select.css" rel="stylesheet">
+	
+   <style>
+ 
+ .accordion {
+   margin: 50px;
+   }
+   .accordion > div {
+   
+	  margin-left: auto;
+      margin-right: auto;
+	  width:670px;
+   
+   }
+   
+  .container{
+  
+   .container > table{
+   margin:150px;
+   }
+  
+  }
+
+</style>
+  </head>
+  <body>
+    
+    <div class="container">
+	<ul class="nav nav-tabs">
+   <li class="active"><a href="#">Home</a></li>
+   <li><a href="#">SVN</a></li>
+   <li><a href="#">iOS</a></li>
+   <li><a href="#">VB.Net</a></li>
+   <li><a href="#">Java</a></li>
+   <li><a href="#">PHP</a></li>
+    </ul>
+	
+	<table>
+	<tr>
+	<th><h2><span class="label label-default">New Job Requirement</span></h2><span class="label label-default">create new job requirement</span></th>
+   <th><button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button></th>
+   </tr>
+</table>
+
+     <div class="accordion">
+	 
+
+
+<h4><a href="">1 JOB DESCRIPTION</a></h4>
+<div>
+
+<label for="id_select" data-label="headers">Job profile</label>
+<select class="selectpicker" data-value="headers">
+    <option value='' disabled selected style='display:none;'>Select</option>
+    <option>Product Manager</option>
+    <option>Software Engineer</option>
+    <option>Technical Lead</option>
+  </select></br>
+  
+  
+    <label for="name">Job description</label>
+    <textarea class="form-control rows="3" style="width:70%;height:90%;" placeholder="Write a brief about your requirements..."></textarea>
+	</br>
+	<button type="button" class="btn btn-warning">Continue</button>
+
+  
+</div>
+
+<h4><a href="">2 CANDIDATE REQUIREMENTS</a></h4>
+<div>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</div>
+
+<h4><a href="">3 INTERVIEW PROCESS</a></h4>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</div>
+
+<h4><a href="">4 SHARING DETAILS</a></h4>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+</div>
+
+</div>
+
+</div>
+	
+	
+    
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/backbone-min.js"></script>
+	
+	<script>
+	 (function($) {
+
+	 $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });		
+  var allPanels = $('.accordion > div').hide();
+  
+  console.log(allPanels);
+  $(allPanels[0]).show();
+  
+    
+  $('.accordion > div > button').click(function() {
+    allPanels.slideUp();
+
+	var labels=[];
+	var values=[];
+	var that=$(this).parent()
+	
+	$(that).children("[data-value]").each(function (){
+	
+	values.push(this.value);
+	}) ;
+	$(that).children("[data-label]").each(function (){
+	
+	console.log($(this).text());
+	labels.push($(this).text());
+	}) ;
+
+	console.log(labels);
+	console.log(values);
+	$(that).prev().html(function() {
+	
+	for(var index in labels) {
+	var labeltag="<span>" + labels[index] +"</span>: "
+	console.log(labeltag);
+	}
+
+	var valuetag="<span>" + values.join(" | ") +"</span>"
+	
+	var modify  ='<span style="position:relative;left:650px;"><a href="">Modify</a></span'
+    
+	if(typeof labeltag !== "undefined" && typeof valuetag !== "undefined") {
+  return '<div><svg width="950" height="10"><line x1="0" y1="0" x2="950" y2="0" style="stroke: green;"/></svg></br>' + labeltag + valuetag + modify +'</div>';
+  }
+	
+	
+	});
+	
+	
+	
+    $(this).parent().next().next().slideDown();
+    return false;
+  });
+
+})(jQuery);
+	</script
+  </body>
+</html>

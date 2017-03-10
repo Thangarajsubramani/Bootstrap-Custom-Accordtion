@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wih4h=device-wih4h, initial-scale=1">
+    <title>Bootstrap 3.1.0 - Modal Demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-select.css" rel="stylesheet">
+	
+   <style>
+ 
+ .accordion {
+   margin: 50px;
+   }
+   .accordion > div {
+   
+	  margin-left: auto;
+      margin-right: auto;
+	  width:770px;
+   
+   }
+
+</style>
+  </head>
+  <body>
+    
+    <div class="container">
+	<ul class="nav nav-tabs">
+   <li class="active"><a href="#">Home</a></li>
+    </ul>
+	
+	<table>
+	<tr>
+	<th><h2><span class="label label-default">New Job Requirement</span></h2><span class="label label-default">create new job requirement</span></th>
+   <th><button type="button" class="btn btn-primary btn-lg btn-block" style="width:1100%;text-align:right">
+     Upload
+   </button></th>
+   </tr>
+</table>
+
+<form id="form" data-parsley-validate>
+<div class="accordion" >
+	 
+
+
+<h4>1 JOB DESCRIPTION</h4>
+<div>
+
+<label for="id_select" data-label="headers">Job profile</label>
+<select class="selectpicker" data-value="headers" data-parsley-group="block1" required>
+    <option value='' disabled selected style='display:none;'>Select</option>
+    <option>Product Manager</option>
+    <option>Software Engineer</option>
+    <option>Technical Lead</option>
+  </select></br>
+  
+  
+    <label for="name">Job description</label>
+    <textarea class="form-control rows="3" style="width:70%;height:90%;" placeholder="Write a brief about your requirements..." data-parsley-group="block1" required></textarea>
+	</br>
+	<button type="button" class="btn btn-warning" data-continue="continue">Continue</button>
+</div>
+
+<h4>2 CANDIDATE REQUIREMENTS</h4>
+<div>
+
+<label for="id_select" data-label="headers">Candidates Exp</label>
+<select class="selectpicker" data-value="headers" data-parsley-group="block2" required>
+    <option value='' disabled selected style='display:none;'>Select</option>
+	<option>5-7 Years</option>
+	
+  </select></br>
+  
+  <label for="id_select">No of candidates required</label>
+<select class="selectpicker" data-value="headers" data-parsley-group="block2" required>
+    <option value='' disabled selected style='display:none;'>Select</option>
+    <option>2 </option>
+    <option>5 </option>
+  </select></br>
+  
+  
+    <label for="name">other details</label>
+    <textarea class="form-control rows="3" style="width:70%;height:90%;" placeholder="Write a brief about your requirements..." data-parsley-group="block2" required></textarea>
+	</br>
+	<button type="button" class="btn btn-warning" data-continue="continue">Continue</button>
+	
+</div>
+
+<h4>3 INTERVIEW PROCESS</h4>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</div>
+
+<h4>4 SHARING DETAILS</h4>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+</div>
+
+</div>
+</form>
+
+</div>
+	
+	
+    
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/backbone-min.js"></script>
+	<script type="text/javascript" src="js/parsley.min.js"></script>
+	<script type="text/javascript" src="src/models/accordModel.js"></script>
+	<script type="text/javascript" src="src/views/accordView.js"></script>
+	
+	<script>
+	 (function($) {
+
+	 $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });		
+			
+	  var model = new accordModel();		
+	  var view  = new accordView({model:model});
+	  
+  
+})(jQuery);
+	</script
+  </body>
+</html>
